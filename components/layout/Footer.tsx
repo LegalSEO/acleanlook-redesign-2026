@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Phone,
   Mail,
@@ -21,18 +22,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Company info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-primary font-bold text-lg">
-                A
-              </div>
-              <div>
-                <span className="block text-lg font-bold leading-tight">
-                  A Clean Look
-                </span>
-                <span className="block text-xs text-white/60 tracking-wide">
-                  PAINTING PROFESSIONALS
-                </span>
-              </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/logos/A Clean Look Logo4.png"
+                alt="A Clean Look — Chicago Painting Services"
+                width={160}
+                height={160}
+                className="h-28 w-auto"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Chicago&apos;s trusted painting professionals with {BUSINESS.yearsInBusiness}+ years

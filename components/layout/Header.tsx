@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Phone,
@@ -103,35 +104,18 @@ export default function Header() {
         <div className="container-wide">
           <nav aria-label="Main navigation" className="flex items-center justify-between py-3 lg:py-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div
+            <Link href="/" className="shrink-0">
+              <Image
+                src="/images/logos/A Clean Look Logo1.png"
+                alt="A Clean Look — Chicago Painting Services"
+                width={220}
+                height={70}
+                priority
                 className={cn(
-                  'flex h-10 w-10 items-center justify-center rounded-lg font-bold text-lg transition-colors',
-                  isScrolled
-                    ? 'bg-primary text-white'
-                    : 'bg-white text-primary'
+                  'h-14 sm:h-16 w-auto transition-all',
+                  isScrolled ? 'brightness-100' : 'brightness-0 invert'
                 )}
-              >
-                A
-              </div>
-              <div>
-                <span
-                  className={cn(
-                    'block text-lg font-bold leading-tight transition-colors',
-                    isScrolled ? 'text-primary' : 'text-white'
-                  )}
-                >
-                  A Clean Look
-                </span>
-                <span
-                  className={cn(
-                    'block text-xs tracking-wide transition-colors',
-                    isScrolled ? 'text-text-secondary' : 'text-white/70'
-                  )}
-                >
-                  PAINTING PROFESSIONALS
-                </span>
-              </div>
+              />
             </Link>
 
             {/* Desktop nav */}
@@ -300,12 +284,13 @@ export default function Header() {
                   className="flex items-center gap-3"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-primary font-bold text-lg">
-                    A
-                  </div>
-                  <span className="text-lg font-bold text-white">
-                    A Clean Look
-                  </span>
+                  <Image
+                    src="/images/logos/A Clean Look Logo1.png"
+                    alt="A Clean Look"
+                    width={180}
+                    height={58}
+                    className="h-12 w-auto brightness-0 invert"
+                  />
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
