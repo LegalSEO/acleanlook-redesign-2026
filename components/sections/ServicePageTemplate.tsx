@@ -36,10 +36,12 @@ import {
   Hammer,
   Blinds,
   Zap,
+  Calculator,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { BUSINESS, SERVICES } from '@/lib/constants'
 import { serviceSchema, breadcrumbSchema, faqSchema, combineSchemas } from '@/lib/seo'
+import StickyEstimateBar from '@/components/shared/StickyEstimateBar'
 
 const iconMap: Record<string, React.ElementType> = {
   Paintbrush, Home, Building2, Droplets, Waves, Wrench,
@@ -167,6 +169,8 @@ export default function ServicePageTemplate({
 
   return (
     <>
+      <StickyEstimateBar serviceName={data.title} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -436,6 +440,67 @@ export default function ServicePageTemplate({
               </h2>
             </div>
             <FAQAccordion faqs={data.faqs} />
+          </div>
+        </div>
+      </AnimSection>
+
+      {/* ━━━ FREE TOOLS ━━━ */}
+      <AnimSection className="py-12 bg-white border-t border-gray-100">
+        <div className="container-wide">
+          <div className="rounded-2xl bg-background-light border border-gray-100 p-6 sm:p-8">
+            <h3 className="text-lg font-bold text-primary mb-4 text-center">
+              Try Our Free Tools
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link
+                href="/tools/paint-estimator"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-primary/20 hover:shadow-sm transition-all group"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cta/10 text-cta shrink-0">
+                  <Calculator className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="block text-sm font-semibold text-primary group-hover:text-cta transition-colors">
+                    Paint Estimator
+                  </span>
+                  <span className="block text-xs text-text-light">
+                    Get instant cost estimates
+                  </span>
+                </div>
+              </Link>
+              <Link
+                href="/tools/color-visualizer"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-primary/20 hover:shadow-sm transition-all group"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent shrink-0">
+                  <Palette className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="block text-sm font-semibold text-primary group-hover:text-cta transition-colors">
+                    Color Visualizer
+                  </span>
+                  <span className="block text-xs text-text-light">
+                    Preview colors on your walls
+                  </span>
+                </div>
+              </Link>
+              <Link
+                href="/tools/color-palette"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-primary/20 hover:shadow-sm transition-all group"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
+                  <Paintbrush className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="block text-sm font-semibold text-primary group-hover:text-cta transition-colors">
+                    Palette Generator
+                  </span>
+                  <span className="block text-xs text-text-light">
+                    Find your perfect colors
+                  </span>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </AnimSection>

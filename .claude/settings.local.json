@@ -5,7 +5,8 @@
       "Bash(npm install:*)",
       "Bash(npx next build:*)",
       "Bash(ls:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(npx next lint:*)"
     ]
   }
 }

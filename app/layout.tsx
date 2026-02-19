@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import LayoutShell from '@/components/layout/LayoutShell'
+import GoogleAnalytics from '@/components/shared/GoogleAnalytics'
+import ExitIntentPopup from '@/components/shared/ExitIntentPopup'
 import { localBusinessSchema, webSiteSchema, combineSchemas } from '@/lib/seo'
 import './globals.css'
 
@@ -81,7 +83,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <GoogleAnalytics />
         <LayoutShell>{children}</LayoutShell>
+        <ExitIntentPopup />
       </body>
     </html>
   )
