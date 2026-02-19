@@ -101,7 +101,7 @@ export default function Header() {
 
         {/* Main nav */}
         <div className="container-wide">
-          <nav className="flex items-center justify-between py-3 lg:py-4">
+          <nav aria-label="Main navigation" className="flex items-center justify-between py-3 lg:py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <div

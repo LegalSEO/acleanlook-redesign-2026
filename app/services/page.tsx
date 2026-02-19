@@ -16,6 +16,7 @@ import {
   Wrench,
 } from 'lucide-react'
 import { BUSINESS, SERVICES } from '@/lib/constants'
+import { breadcrumbSchema, combineSchemas } from '@/lib/seo'
 
 const iconMap: Record<string, React.ElementType> = {
   Paintbrush, Home, Building2, Droplets, Waves, Wrench,
@@ -38,8 +39,38 @@ function AnimSection({ children, className }: { children: React.ReactNode; class
 }
 
 export default function ServicesPage() {
+  const servicesListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: 'Painting & Home Services',
+    provider: { '@id': 'https://acleanlook.com/#business' },
+    itemListElement: SERVICES.map((s, i) => ({
+      '@type': 'Offer',
+      position: i + 1,
+      itemOffered: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.shortDescription,
+        url: `https://acleanlook.com/services/${s.slug}`,
+      },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: combineSchemas(
+            breadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'Services', href: '/services' },
+            ]),
+            servicesListSchema
+          ),
+        }}
+      />
+
       {/* ━━━ HERO ━━━ */}
       <section className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-800 pt-32 pb-20 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />

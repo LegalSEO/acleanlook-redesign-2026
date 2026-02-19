@@ -39,6 +39,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { BUSINESS, SERVICES } from '@/lib/constants'
+import { serviceSchema, breadcrumbSchema, faqSchema, combineSchemas } from '@/lib/seo'
 
 const iconMap: Record<string, React.ElementType> = {
   Paintbrush, Home, Building2, Droplets, Waves, Wrench,
@@ -166,6 +167,28 @@ export default function ServicePageTemplate({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: combineSchemas(
+            serviceSchema({
+              name: data.title,
+              description: data.subtitle,
+              slug: data.slug,
+              priceRange: data.pricing.items.length > 0
+                ? `${data.pricing.items[0].range}`
+                : undefined,
+            }),
+            breadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'Services', href: '/services' },
+              { name: data.title, href: `/services/${data.slug}` },
+            ]),
+            faqSchema(data.faqs)
+          ),
+        }}
+      />
+
       {/* ━━━ HERO ━━━ */}
       <section className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-800 pt-32 pb-20 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />

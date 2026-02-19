@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import LayoutShell from '@/components/layout/LayoutShell'
+import { localBusinessSchema, webSiteSchema, combineSchemas } from '@/lib/seo'
 import './globals.css'
 
 const inter = Inter({
@@ -43,6 +44,14 @@ export const metadata: Metadata = {
     title: "A Clean Look | Chicago's Trusted Painting Professionals",
     description:
       '30+ years transforming Chicago homes & businesses. Full-service painting, power washing, and more. Free estimates!',
+    images: [
+      {
+        url: '/api/og',
+        width: 1200,
+        height: 630,
+        alt: "A Clean Look — Chicago's Trusted Painting Professionals",
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -63,6 +72,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: combineSchemas(localBusinessSchema(), webSiteSchema()),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <LayoutShell>{children}</LayoutShell>
       </body>

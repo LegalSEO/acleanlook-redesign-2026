@@ -22,6 +22,7 @@ import {
   MapPin,
 } from 'lucide-react'
 import { BUSINESS, SERVICE_AREAS } from '@/lib/constants'
+import { breadcrumbSchema } from '@/lib/seo'
 
 // ─── Animated Counter ───────────────────────────────────────
 function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
@@ -79,6 +80,18 @@ function AnimatedSection({
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'About', href: '/about' },
+            ])
+          ),
+        }}
+      />
+
       {/* ━━━ HERO ━━━ */}
       <section className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-800 pt-32 pb-20 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />

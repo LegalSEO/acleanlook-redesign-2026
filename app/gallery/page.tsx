@@ -17,6 +17,7 @@ import {
 import { cn } from '@/lib/utils'
 import { BUSINESS } from '@/lib/constants'
 import { GALLERY_PROJECTS, GALLERY_FILTERS } from '@/data/gallery'
+import { breadcrumbSchema } from '@/lib/seo'
 import type { GalleryProject } from '@/data/gallery'
 
 // ─── Before/After Slider ────────────────────────────────────
@@ -269,6 +270,18 @@ export default function GalleryPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'Gallery', href: '/gallery' },
+            ])
+          ),
+        }}
+      />
+
       {/* ━━━ HERO ━━━ */}
       <section className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-800 pt-32 pb-20 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
