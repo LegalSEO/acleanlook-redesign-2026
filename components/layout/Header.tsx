@@ -106,13 +106,13 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="shrink-0">
               <Image
-                src="/images/logos/A Clean Look Logo1.png"
+                src="/images/logos/acleanlook9.png"
                 alt="A Clean Look — Chicago Painting Services"
-                width={220}
-                height={70}
+                width={280}
+                height={90}
                 priority
                 className={cn(
-                  'h-14 sm:h-16 w-auto transition-all',
+                  'h-16 sm:h-20 w-auto transition-all',
                   isScrolled ? 'brightness-100' : 'brightness-0 invert'
                 )}
               />
@@ -285,11 +285,11 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Image
-                    src="/images/logos/A Clean Look Logo1.png"
+                    src="/images/logos/acleanlook9.png"
                     alt="A Clean Look"
-                    width={180}
-                    height={58}
-                    className="h-12 w-auto brightness-0 invert"
+                    width={220}
+                    height={70}
+                    className="h-14 w-auto brightness-0 invert"
                   />
                 </Link>
                 <button

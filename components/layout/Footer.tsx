@@ -24,11 +24,11 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/images/logos/A Clean Look Logo4.png"
+                src="/images/logos/acleanlook8.png"
                 alt="A Clean Look — Chicago Painting Services"
-                width={160}
-                height={160}
-                className="h-28 w-auto"
+                width={320}
+                height={120}
+                className="h-20 sm:h-24 w-auto brightness-0 invert"
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
