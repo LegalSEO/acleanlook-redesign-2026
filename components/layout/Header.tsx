@@ -106,7 +106,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="shrink-0">
               <Image
-                src="/images/logos/acleanlook9.png"
+                src="/images/logos/new/logonew4.png"
                 alt="A Clean Look — Chicago Painting Services"
                 width={280}
                 height={90}
@@ -285,7 +285,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Image
-                    src="/images/logos/acleanlook9.png"
+                    src="/images/logos/new/logonew4.png"
                     alt="A Clean Look"
                     width={220}
                     height={70}

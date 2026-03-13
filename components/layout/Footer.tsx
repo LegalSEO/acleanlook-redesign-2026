@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/images/logos/acleanlook8.png"
+                src="/images/logos/new/logonew7.png"
                 alt="A Clean Look — Chicago Painting Services"
                 width={320}
                 height={120}
