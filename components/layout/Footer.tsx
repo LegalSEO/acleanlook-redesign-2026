@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-b from-primary to-primary-900 text-white">
       {/* Main footer */}
       <div className="container-wide section-padding pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Company info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
@@ -130,6 +130,74 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Resources & Tools */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+              Free Resources
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href="/tools/paint-estimator"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Paint Estimate Calculator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/color-visualizer"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Room Color Visualizer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/seasonal-planner"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Seasonal Planner
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/color-palette"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Color Palette Generator
+                </Link>
+              </li>
+              <li className="pt-1">
+                <span className="block text-xs text-white/40 uppercase tracking-wider mb-2">Guides</span>
+              </li>
+              <li>
+                <Link
+                  href="/resources/chicago-homeowner-guide"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Exterior Painting Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/paint-color-guide"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Color Selection Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/home-maintenance-checklist"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  Maintenance Checklist
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact */}
           <div
             itemScope
@@ -232,6 +300,17 @@ export default function Footer() {
               Terms of Service
             </Link>
           </div>
+          <p className="text-white/40 text-xs">
+            Contractor Websites by{' '}
+            <a
+              href="https://costaailabs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors underline underline-offset-2"
+            >
+              Costa AI Labs
+            </a>
+          </p>
         </div>
       </div>
     </footer>
