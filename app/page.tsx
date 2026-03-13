@@ -230,34 +230,19 @@ export default function HomePage() {
     <>
       {/* ━━━ HERO SECTION ━━━ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-600 to-primary-900">
-          {/* Decorative shapes */}
-          <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-cta/5 rounded-full blur-3xl" />
-
-          {/* Paint brush stroke accent */}
-          <svg
-            className="absolute bottom-0 left-0 w-full h-32 text-white/5"
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
           >
-            <path
-              d="M0,60 Q360,120 720,60 T1440,60 L1440,120 L0,120 Z"
-              fill="currentColor"
-            />
-          </svg>
-
-          {/* Animated paint drips */}
-          <div className="absolute top-0 left-[15%] w-3 h-24 bg-accent/20 rounded-b-full paint-drip" />
-          <div
-            className="absolute top-0 left-[45%] w-2 h-16 bg-cta/15 rounded-b-full paint-drip"
-            style={{ animationDelay: '1s' }}
-          />
-          <div
-            className="absolute top-0 left-[75%] w-4 h-20 bg-accent/10 rounded-b-full paint-drip"
-            style={{ animationDelay: '2s' }}
-          />
+            <source src="/videos/hero loop videos/chicagopainters1.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-primary-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-transparent to-primary-900/40" />
         </div>
 
         <div className="container-wide relative z-10 pt-32 pb-20">

@@ -77,6 +77,7 @@ export type ServicePageData = {
   slug: string
   title: string
   subtitle: string
+  heroVideo?: string
   description: React.ReactNode
   features: ServiceFeature[]
   process: ProcessStep[]
@@ -194,9 +195,28 @@ export default function ServicePageTemplate({
       />
 
       {/* ━━━ HERO ━━━ */}
-      <section className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-800 pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-64 h-64 bg-cta/5 rounded-full blur-3xl" />
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Video or gradient background */}
+        {data.heroVideo ? (
+          <div className="absolute inset-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src={data.heroVideo} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-primary-900/70" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-transparent to-primary-900/40" />
+          </div>
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-600 to-primary-800">
+            <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-cta/5 rounded-full blur-3xl" />
+          </div>
+        )}
 
         <div className="container-wide relative z-10">
           <motion.nav

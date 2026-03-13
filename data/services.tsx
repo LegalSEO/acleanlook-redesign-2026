@@ -4,6 +4,7 @@ export const SERVICE_DATA: Record<string, ServicePageData> = {
   'interior-painting': {
     slug: 'interior-painting',
     title: 'Interior Painting',
+    heroVideo: '/videos/hero loop videos/paintrollerinside.mp4',
     subtitle:
       'Transform any room with expert interior painting. From single accent walls to full home makeovers — we handle it all with precision and care.',
     description: (
@@ -149,6 +150,7 @@ export const SERVICE_DATA: Record<string, ServicePageData> = {
   'exterior-painting': {
     slug: 'exterior-painting',
     title: 'Exterior Painting',
+    heroVideo: '/videos/hero loop videos/paintersoutsideday.mp4',
     subtitle:
       'Protect and beautify your home with weather-resistant exterior coatings built specifically for Chicago\'s demanding climate.',
     description: (
@@ -287,6 +289,7 @@ export const SERVICE_DATA: Record<string, ServicePageData> = {
   'commercial-painting': {
     slug: 'commercial-painting',
     title: 'Commercial Painting',
+    heroVideo: '/videos/hero loop videos/chicagocityday1.mp4',
     subtitle:
       'Professional painting for offices, retail, restaurants, and commercial properties with minimal disruption to your business.',
     description: (
@@ -420,6 +423,7 @@ export const SERVICE_DATA: Record<string, ServicePageData> = {
   'power-washing': {
     slug: 'power-washing',
     title: 'Power Washing',
+    heroVideo: '/videos/hero loop videos/paintersoutsideday.mp4',
     subtitle:
       'Restore driveways, siding, decks, patios, and more with professional pressure washing. The fastest way to refresh your property.',
     description: (
@@ -547,6 +551,7 @@ export const SERVICE_DATA: Record<string, ServicePageData> = {
   'gutter-cleaning': {
     slug: 'gutter-cleaning',
     title: 'Gutter Cleaning',
+    heroVideo: '/videos/hero loop videos/chicagocityday1.mp4',
     subtitle:
       'Keep your gutters clear and your home protected with seasonal cleaning. Critical for Chicago homes facing ice dams and heavy leaf buildup.',
     description: (
@@ -673,6 +678,7 @@ export const SERVICE_DATA: Record<string, ServicePageData> = {
   handyman: {
     slug: 'handyman',
     title: 'Handyman Services',
+    heroVideo: '/videos/hero loop videos/paintrollerinside.mp4',
     subtitle:
       'Drywall repair, carpentry, tile, and general home improvement. One call does it all — let us handle your to-do list.',
     description: (
