@@ -108,11 +108,11 @@ export default function Header() {
               <Image
                 src="/images/logos/new/logonew4.png"
                 alt="A Clean Look — Chicago Painting Services"
-                width={280}
-                height={90}
+                width={340}
+                height={110}
                 priority
                 className={cn(
-                  'h-16 sm:h-20 w-auto transition-all',
+                  'h-20 sm:h-24 w-auto transition-all',
                   isScrolled ? 'brightness-100' : 'brightness-0 invert'
                 )}
               />
