@@ -6,7 +6,10 @@
       "Bash(npx next build:*)",
       "Bash(ls:*)",
       "Bash(git init:*)",
-      "Bash(npx next lint:*)"
+      "Bash(npx next lint:*)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(npx tailwindcss *)"
     ]
   }
 }

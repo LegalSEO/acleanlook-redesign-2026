@@ -9,6 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // ── Editorial redesign tokens (acleanlook redesign 2026) ─────────
+        paper: '#f7f2e8',
+        'paper-2': '#efe9dd',
+        'paper-3': '#e6dfd0',
+        ink: {
+          DEFAULT: '#1a1d24',
+          soft: '#4a4d56',
+        },
+        'ink-soft': '#4a4d56',
+        rule: {
+          DEFAULT: '#d8cfb9',
+          soft: '#e8e0cb',
+        },
+        'rule-soft': '#e8e0cb',
+        'accent-soft': '#e9d6a8',
+        // ── Legacy tokens (kept for transition; pages still using them
+        //     will be replaced by the new editorial templates) ─────────
         primary: {
           DEFAULT: '#1B365D',
           50: '#E8EDF4',
@@ -23,14 +40,14 @@ const config: Config = {
           900: '#070B14',
         },
         accent: {
-          DEFAULT: '#D4A843',
+          DEFAULT: '#b9842b',
           50: '#FCF6E8',
           100: '#F8EDD1',
           200: '#F1DBA3',
           300: '#EAC975',
           400: '#DFB85C',
-          500: '#D4A843',
-          600: '#B88D2E',
+          500: '#b9842b',
+          600: '#a0721f',
           700: '#8A6A23',
           800: '#5C4717',
           900: '#2E230C',
@@ -74,11 +91,21 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        accent: ['var(--font-playfair)', 'Georgia', 'serif'],
+        // Editorial redesign: Fraunces for display, Inter for body, JetBrains Mono for kickers
+        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Cormorant Garamond', 'Georgia', 'serif'],
+        mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'monospace'],
+        // Legacy aliases (heading/accent map to the new system during transition)
+        heading: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        accent: ['var(--font-fraunces)', 'Georgia', 'serif'],
       },
       fontSize: {
+        // Editorial type scale — clamp-driven, used by .acl-h1 / .acl-h2
+        'acl-h1': ['clamp(44px, 7vw, 96px)', { lineHeight: '0.96', letterSpacing: '-0.025em' }],
+        'acl-h2': ['clamp(30px, 4.4vw, 54px)', { lineHeight: '1.02', letterSpacing: '-0.02em' }],
+        'acl-lede': ['clamp(16px, 1.4vw, 19px)', { lineHeight: '1.55' }],
+        // Legacy scale
         'display-xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'display': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'h1': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
@@ -90,6 +117,16 @@ const config: Config = {
         'body': ['1rem', { lineHeight: '1.7' }],
         'body-sm': ['0.875rem', { lineHeight: '1.6' }],
         'caption': ['0.75rem', { lineHeight: '1.5' }],
+      },
+      maxWidth: {
+        shell: '1400px',
+        '56ch': '56ch',
+        '64ch': '64ch',
+      },
+      letterSpacing: {
+        eyebrow: '0.18em',
+        kicker: '0.12em',
+        mono: '0.06em',
       },
       spacing: {
         '18': '4.5rem',

@@ -25,6 +25,11 @@ import {
   Mail,
   User,
   MapPin,
+  Calculator,
+  Palette,
+  Calendar,
+  Sparkles,
+  BookOpen,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
@@ -694,6 +699,124 @@ export default function HomePage() {
             >
               See All Service Areas
               <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* ━━━ FREE TOOLS & RESOURCES ━━━ */}
+      <AnimatedSection className="section-padding bg-background-light">
+        <div className="container-wide">
+          <div className="text-center mb-14">
+            <span className="section-label mb-4">Free Tools</span>
+            <h2 className="heading-1 text-primary mt-4">
+              Free Tools &amp; Resources for Homeowners
+            </h2>
+            <p className="text-text-secondary text-lg mt-4 max-w-2xl mx-auto">
+              Plan your project with our free interactive tools. Get estimates, explore colors, and download expert guides — all at no cost.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Paint Estimator */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Link href="/tools/paint-estimator" className="block rounded-2xl bg-white border border-gray-100 p-6 hover:shadow-lg hover:border-cta/20 transition-all group h-full">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-orange-50 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                  🧮
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-cta transition-colors">Paint Estimate Calculator</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">Get instant cost estimates for interior &amp; exterior painting based on real Chicago market data.</p>
+                <span className="inline-flex items-center text-sm font-semibold text-cta">
+                  Try It Free <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Color Visualizer */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Link href="/tools/color-visualizer" className="block rounded-2xl bg-white border border-gray-100 p-6 hover:shadow-lg hover:border-cta/20 transition-all group h-full">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-pink-50 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                  🖌️
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-cta transition-colors">Room Color Visualizer</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">Preview paint colors on template rooms or upload your own photo. 80+ curated colors available.</p>
+                <span className="inline-flex items-center text-sm font-semibold text-cta">
+                  Try It Free <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Seasonal Planner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link href="/tools/seasonal-planner" className="block rounded-2xl bg-white border border-gray-100 p-6 hover:shadow-lg hover:border-cta/20 transition-all group h-full">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                  📅
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-cta transition-colors">Seasonal Planner</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">Month-by-month home maintenance guide tailored to Chicago weather and seasonal needs.</p>
+                <span className="inline-flex items-center text-sm font-semibold text-cta">
+                  Try It Free <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Color Palette */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Link href="/tools/color-palette" className="block rounded-2xl bg-white border border-gray-100 p-6 hover:shadow-lg hover:border-cta/20 transition-all group h-full">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-violet-50 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                  ✨
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-cta transition-colors">Color Palette Generator</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">Create beautiful, complementary color palettes for any room style or mood.</p>
+                <span className="inline-flex items-center text-sm font-semibold text-cta">
+                  Try It Free <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Free Guides row */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link href="/resources/chicago-homeowner-guide" className="flex items-center gap-4 rounded-xl bg-white border border-gray-100 p-4 hover:shadow-md hover:border-primary/20 transition-all group">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-xl">📖</div>
+              <div>
+                <span className="block text-sm font-bold text-primary group-hover:text-cta transition-colors">Exterior Painting Guide</span>
+                <span className="block text-xs text-text-secondary">Free download for Chicago homeowners</span>
+              </div>
+            </Link>
+            <Link href="/resources/paint-color-guide" className="flex items-center gap-4 rounded-xl bg-white border border-gray-100 p-4 hover:shadow-md hover:border-primary/20 transition-all group">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-xl">📚</div>
+              <div>
+                <span className="block text-sm font-bold text-primary group-hover:text-cta transition-colors">Color Selection Guide</span>
+                <span className="block text-xs text-text-secondary">2025 trending colors &amp; tips</span>
+              </div>
+            </Link>
+            <Link href="/resources/home-maintenance-checklist" className="flex items-center gap-4 rounded-xl bg-white border border-gray-100 p-4 hover:shadow-md hover:border-primary/20 transition-all group">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-50 text-xl">✅</div>
+              <div>
+                <span className="block text-sm font-bold text-primary group-hover:text-cta transition-colors">Maintenance Checklist</span>
+                <span className="block text-xs text-text-secondary">Seasonal checklist for your home</span>
+              </div>
             </Link>
           </div>
         </div>

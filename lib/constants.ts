@@ -109,6 +109,48 @@ export const NAV_ITEMS: NavItem[] = [
       icon: s.icon,
     })),
   },
+  {
+    label: 'Free Tools',
+    href: '/tools',
+    children: [
+      {
+        label: 'Paint Estimate Calculator',
+        href: '/tools/paint-estimator',
+        description: 'Get instant cost estimates based on real Chicago pricing data.',
+        icon: 'Calculator',
+      },
+      {
+        label: 'Room Color Visualizer',
+        href: '/tools/color-visualizer',
+        description: 'Preview colors on template rooms or your own photos.',
+        icon: 'Palette',
+      },
+      {
+        label: 'Seasonal Planner',
+        href: '/tools/seasonal-planner',
+        description: 'Month-by-month maintenance guide for Chicago homes.',
+        icon: 'Calendar',
+      },
+      {
+        label: 'Color Palette Generator',
+        href: '/tools/color-palette',
+        description: 'Create beautiful color palettes for any room.',
+        icon: 'Sparkles',
+      },
+      {
+        label: 'Exterior Painting Guide',
+        href: '/resources/chicago-homeowner-guide',
+        description: 'Free guide to exterior painting in Chicago.',
+        icon: 'BookOpen',
+      },
+      {
+        label: 'Color Selection Guide',
+        href: '/resources/paint-color-guide',
+        description: '2025 trending colors and selection tips.',
+        icon: 'BookOpen',
+      },
+    ],
+  },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Areas', href: '/areas' },
   { label: 'Reviews', href: '/reviews' },

@@ -4,11 +4,27 @@
 
 @layer base {
   :root {
-    /* Brand Colors */
+    /* ── Editorial redesign tokens (acleanlook 2026) ──
+       Mirror the Tailwind tokens so raw CSS in section components
+       (acl-* classes, prototype ports) can reference the palette. */
+    --acl-paper: #f7f2e8;
+    --acl-paper-2: #efe9dd;
+    --acl-paper-3: #e6dfd0;
+    --acl-ink: #1a1d24;
+    --acl-ink-soft: #4a4d56;
+    --acl-rule: #d8cfb9;
+    --acl-rule-soft: #e8e0cb;
+    --acl-accent: #b9842b;
+    --acl-accent-soft: #e9d6a8;
+    --acl-display: var(--font-fraunces), 'Cormorant Garamond', Georgia, serif;
+    --acl-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+    --acl-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+    /* ── Legacy brand tokens (kept until pages are migrated) ── */
     --color-primary: #1B365D;
     --color-primary-light: #476FA7;
     --color-primary-dark: #0C1627;
-    --color-accent: #D4A843;
+    --color-accent: #b9842b;
     --color-accent-light: #EAC975;
     --color-accent-dark: #8A6A23;
     --color-cta: #E8630A;
@@ -35,20 +51,113 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    color: var(--color-text-primary);
-    background-color: #FFFFFF;
+    color: var(--acl-ink);
+    background-color: var(--acl-paper);
+    font-family: var(--acl-body);
+  }
+
+  /* Default balanced wrap on headings — non-visual; safe across legacy + new. */
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 
   ::selection {
-    background-color: rgba(212, 168, 67, 0.25);
-    color: var(--color-primary);
+    background-color: rgba(185, 132, 43, 0.22);
+    color: var(--acl-ink);
   }
 }
 
 @layer components {
+  /* ── Editorial shell — 1400px max with 32px gutters (20px on phones).
+        Use on every section's outer wrapper in the redesigned templates. */
+  .shell {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media (max-width: 640px) {
+    .shell {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  /* ── Editorial display heading.
+        Three-line stacked, italic+accent for the emphasized line. */
+  .acl-h1 {
+    font-family: var(--acl-display);
+    font-weight: 400;
+    font-size: clamp(44px, 7vw, 96px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: var(--acl-ink);
+    text-wrap: balance;
+    margin: 0 0 28px;
+  }
+  .acl-h1__line { display: block; font-style: normal; }
+  .acl-h1__line--accent {
+    font-style: italic;
+    color: var(--acl-accent);
+    font-weight: 400;
+  }
+
+  .acl-h2 {
+    font-family: var(--acl-display);
+    font-weight: 400;
+    font-size: clamp(30px, 4.4vw, 54px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--acl-ink);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  /* Eyebrow — uppercase mono kicker with flanking hairlines */
+  .acl-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--acl-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--acl-ink-soft);
+  }
+  .acl-eyebrow__rule {
+    flex: 0 1 60px;
+    height: 1px;
+    background: var(--acl-ink-soft);
+    opacity: 0.5;
+  }
+
+  /* Section number — "§ 01", "№ 02" — mono accent label above section heads */
+  .acl-secnum {
+    font-family: var(--acl-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--acl-accent);
+  }
+
+  /* Lede — standfirst paragraph under hero / section heads */
+  .acl-lede {
+    font-family: var(--acl-body);
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.55;
+    color: var(--acl-ink-soft);
+    max-width: 56ch;
+    margin: 0;
+  }
+
   /* Container */
   .container-wide {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
