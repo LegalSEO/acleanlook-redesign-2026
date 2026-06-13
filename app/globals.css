@@ -420,6 +420,63 @@
     background: var(--acl-accent);
   }
 
+  /* ── Sticky estimate bar — paper bg, shows after scroll past hero ── */
+  .acl-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--acl-paper);
+    border-top: 1px solid var(--acl-rule);
+    box-shadow: 0 -10px 30px -12px rgba(0, 0, 0, 0.15);
+    z-index: 30;
+    animation: aclriseup 0.4s ease;
+  }
+  .acl-sticky__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 16px;
+  }
+  .acl-sticky__copy {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .acl-sticky__label {
+    font-family: var(--acl-display);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--acl-ink);
+  }
+  .acl-sticky__sub {
+    font-family: var(--acl-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--acl-ink-soft);
+    margin-top: 4px;
+  }
+  .acl-sticky__actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  .acl-sticky__phone {
+    font-family: var(--acl-display);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--acl-ink);
+    transition: color 0.2s ease;
+  }
+  .acl-sticky__phone:hover { color: var(--acl-accent); }
+  @media (max-width: 600px) {
+    .acl-sticky__sub   { display: none; }
+    .acl-sticky__phone { display: none; }
+  }
+
   /* ── Top bar status dot (continuous slow pulse) ────────── */
   .acl-topbar-dot {
     width: 6px;

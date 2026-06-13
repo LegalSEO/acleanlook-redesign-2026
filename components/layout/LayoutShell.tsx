@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Header from './Header'
 import Footer from './Footer'
-import MobileCTA from './MobileCTA'
+import StickyEstimateBar from './StickyEstimateBar'
 import TopBar from './TopBar'
 
 const MINIMAL_LAYOUT_ROUTES = ['/free-estimate']
@@ -34,7 +34,7 @@ export default function LayoutShell({
       <Header />
       <main id="main" role="main">{children}</main>
       <Footer />
-      <MobileCTA />
+      <StickyEstimateBar />
     </>
   )
 }
