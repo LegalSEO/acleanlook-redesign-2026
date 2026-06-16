@@ -1,11 +1,19 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { PROJECTS } from '@/data/homepage'
 
-function BeforeAfter({
-  before, after, loc, note,
-}: { before: string; after: string; loc: string; note: string }) {
+type BAProps = {
+  before: string
+  after: string
+  beforeImg?: string
+  afterImg?: string
+  loc: string
+  note: string
+}
+
+function BeforeAfter({ before, after, beforeImg, afterImg, loc, note }: BAProps) {
   const [pos, setPos] = useState(50)
   const ref = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
@@ -32,18 +40,33 @@ function BeforeAfter({
     }
   }, [])
 
+  const hasImages = !!(beforeImg && afterImg)
+  const stageStyle = hasImages ? { aspectRatio: '4/3' } : {}
+
   return (
     <figure className="acl-ba">
       <div
         ref={ref}
         className="acl-ba__stage"
+        style={stageStyle}
         onMouseDown={(e) => { dragging.current = true; onMove(e.clientX) }}
         onTouchStart={(e) => { dragging.current = true; e.touches[0] && onMove(e.touches[0].clientX) }}
       >
-        <div className="acl-ba__layer" style={{ background: after }}>
+        {/* After layer (always full width underneath) */}
+        <div className="acl-ba__layer" style={{ background: hasImages ? undefined : after }}>
+          {hasImages && (
+            <Image src={afterImg!} alt={`After: ${loc}`} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 50vw" />
+          )}
           <span className="acl-ba__chip">After · Repainted</span>
         </div>
-        <div className="acl-ba__layer" style={{ background: before, clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
+        {/* Before layer (clipped by drag position) */}
+        <div
+          className="acl-ba__layer"
+          style={{ background: hasImages ? undefined : before, clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+        >
+          {hasImages && (
+            <Image src={beforeImg!} alt={`Before: ${loc}`} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 50vw" />
+          )}
           <span className="acl-ba__chip acl-ba__chip--before">Before · As found</span>
         </div>
         <div className="acl-ba__divider" style={{ left: `${pos}%` }}>
@@ -81,7 +104,14 @@ export default function WorkSection() {
           {PROJECTS.map((p, i) => (
             <div key={i} className="acl-work__cell">
               <span className="acl-work__tag">{p.tag}</span>
-              <BeforeAfter before={p.before} after={p.after} loc={p.loc} note={p.note} />
+              <BeforeAfter
+                before={p.before}
+                after={p.after}
+                beforeImg={p.beforeImg}
+                afterImg={p.afterImg}
+                loc={p.loc}
+                note={p.note}
+              />
             </div>
           ))}
         </div>

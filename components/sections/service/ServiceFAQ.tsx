@@ -3,11 +3,11 @@
 import { useState } from 'react'
 import type { FaqItem } from '@/data/services-editorial'
 
-export default function ServiceFAQ({ faqs, sectionNum = '§ 06' }: { faqs: FaqItem[]; sectionNum?: string }) {
+export default function ServiceFAQ({ faqs, sectionNum = '§ 06', className }: { faqs: FaqItem[]; sectionNum?: string; className?: string }) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="acl-faq">
+    <section className={`acl-faq${className ? ` ${className}` : ''}`}>
       <div className="shell">
         <header className="acl-secthead">
           <span className="acl-secthead__no">{sectionNum}</span>

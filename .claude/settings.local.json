@@ -17,7 +17,18 @@
       "Bash(mkdir -p \"c:/2026 Claude Code Get PAID Tools/A CLEAN Look/app/services/[slug]\")",
       "Read(//tmp/**)",
       "Bash(curl -s http://localhost:3002/services/interior-painting)",
-      "Bash(curl -s http://localhost:3002/services/exterior-painting)"
+      "Bash(curl -s http://localhost:3002/services/exterior-painting)",
+      "Bash(npx next *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/areas/lincoln-park)",
+      "Bash(curl -s http://localhost:3002/areas/evanston)",
+      "mcp__claude_ai_Higgsfield__balance",
+      "mcp__claude_ai_Higgsfield__generate_image",
+      "mcp__claude_ai_Higgsfield__job_status",
+      "Bash(curl -sL \"https://d8j0ntlcm91z4.cloudfront.net/user_363XIFtGmxbq2iit1pb43z5XIUn/hf_20260616_060352_c3ac51d1-b160-4f8a-8bf6-df09a7d0d119.jpeg\" -o \"c:/2026 Claude Code Get PAID Tools/A CLEAN Look/public/images/hero/hero-painters.jpg\")",
+      "Bash(curl -sL \"https://d8j0ntlcm91z4.cloudfront.net/user_363XIFtGmxbq2iit1pb43z5XIUn/hf_20260616_060354_683ec096-4f23-44b0-92f3-53239d0074c1.png\" -o \"c:/2026 Claude Code Get PAID Tools/A CLEAN Look/public/images/before-after-before.png\")",
+      "Bash(curl -sL \"https://d8j0ntlcm91z4.cloudfront.net/user_363XIFtGmxbq2iit1pb43z5XIUn/hf_20260616_060356_695edce4-9576-4d73-91d2-2fe1026cd912.png\" -o \"c:/2026 Claude Code Get PAID Tools/A CLEAN Look/public/images/before-after-after.png\")",
+      "Bash(wait)",
+      "Bash(curl -s http://localhost:3002/)"
     ],
     "additionalDirectories": [
       "c:\\2026 Claude Code Get PAID Tools\\A CLEAN Look\\app\\services"

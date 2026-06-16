@@ -18,13 +18,21 @@ export const HOME_SERVICES = [
 ] as const
 
 export const PROJECTS = [
-  { tag: 'Exterior · 2025', loc: 'Greystone, Lincoln Park',  before: '#9a8a72', after: '#1f2d3d', note: 'Limestone trim, navy clapboard' },
-  { tag: 'Interior · 2025', loc: 'Townhouse, Bucktown',      before: '#c8b89a', after: '#e8e3d8', note: 'Warm white, walnut trim' },
-  { tag: 'Exterior · 2024', loc: 'Tudor, Wilmette',          before: '#7a6b58', after: '#2b2a26', note: 'Dark slate, cream stucco' },
-  { tag: 'Interior · 2024', loc: 'Loft, West Loop',          before: '#b9b0a1', after: '#252321', note: 'Library black, brass' },
-  { tag: 'Cabinet · 2024',  loc: 'Kitchen, Andersonville',   before: '#e2d6bc', after: '#3a4a3e', note: 'Forest green, gold pulls' },
-  { tag: 'Exterior · 2023', loc: 'Bungalow, Sauganash',      before: '#8a8268', after: '#5b3d2e', note: 'Brick red, ivory accent' },
-] as const
+  {
+    tag: 'Exterior · 2025',
+    loc: 'Bungalow, North Side Chicago',
+    before: '#9a8a72',
+    after: '#f5f2ec',
+    beforeImg: '/images/before-after-before.png',
+    afterImg: '/images/before-after-after.png',
+    note: 'Peeling porch siding → Benjamin Moore White Dove',
+  },
+  { tag: 'Interior · 2025', loc: 'Townhouse, Bucktown',    before: '#c8b89a', after: '#e8e3d8', note: 'Warm white, walnut trim' },
+  { tag: 'Exterior · 2024', loc: 'Tudor, Wilmette',        before: '#7a6b58', after: '#2b2a26', note: 'Dark slate, cream stucco' },
+  { tag: 'Interior · 2024', loc: 'Loft, West Loop',        before: '#b9b0a1', after: '#252321', note: 'Library black, brass' },
+  { tag: 'Cabinet · 2024',  loc: 'Kitchen, Andersonville', before: '#e2d6bc', after: '#3a4a3e', note: 'Forest green, gold pulls' },
+  { tag: 'Exterior · 2023', loc: 'Bungalow, Sauganash',    before: '#8a8268', after: '#5b3d2e', note: 'Brick red, ivory accent' },
+]
 
 export const PROCESS_STEPS = [
   { n: 'I',   t: 'Walk-through',       d: 'Steve visits the property — usually within 48 hours. Measures, photographs, listens. No sales pitch.' },

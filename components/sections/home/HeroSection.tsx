@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Phone } from 'lucide-react'
 import { BUSINESS } from '@/lib/constants'
 import { HERO_SWATCHES } from '@/data/homepage'
@@ -46,22 +47,23 @@ export default function HeroSection() {
         {/* Plate */}
         <aside className="acl-hero__plate">
           <div
-            className="acl-placeholder"
-            style={{
-              aspectRatio: '4/5',
-              background: 'repeating-linear-gradient(135deg, #efe9dd 0 12px, #e6dfd0 12px 24px)',
-            }}
-            aria-label="Hero project photo — Logan Square two-flat exterior"
+            style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', border: '1px solid var(--acl-rule)' }}
+            aria-label="Chicago Victorian home exterior — professional painters at work"
           >
-            <span className="acl-placeholder__tag">
-              HERO · Two-flat, Logan Square — exterior repaint, slate + bone
-            </span>
+            <Image
+              src="/images/hero/hero-painters.jpg"
+              alt="Professional house painters working on a Chicago Victorian home exterior, golden hour light"
+              fill
+              priority
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
 
           <div className="acl-hero__caption">
             <span className="acl-hero__capnum">№ 142</span>
             <span className="acl-hero__captext">
-              The Logan Square Two-Flat — repainted October 2025. Three coats Aura Exterior
+              North Side Victorian — repainted September 2025. Three coats Aura Exterior
               in <em>Hale Navy</em> over Benjamin Moore primer; trim in <em>Simply White</em>.
             </span>
           </div>
